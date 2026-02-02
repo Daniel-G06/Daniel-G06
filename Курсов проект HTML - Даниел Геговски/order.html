@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendify - Поръчка</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="main-container">
+        <header class="header-container">
+            <div class="logo"><a href="index.html"><h1>TRENDIFY</h1></a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="products.html?gender=men">Мъже</a></li>
+                    <li><a href="products.html?gender=women">Жени</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="user-menu">
+                    <a href="#" class="nav-text-link">Профил</a>
+                    <div class="dropdown-content" id="user-dropdown"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="cart-page">
+            <h2 class="section-title">ЗАВЪРШВАНЕ НА ПОРЪЧКАТА</h2>
+
+            <div id="product-preview-container" class="max-width-text"></div>
+
+            <div class="order-box">
+                <h3>Данни за доставка</h3>
+                <form id="checkout-form">
+                    <label for="cust-name">Вашето име:</label>
+                    <input type="text" id="cust-name" required>
+                    
+                    <label for="cust-phone">Телефон за връзка:</label>
+                    <input type="text" id="cust-phone" required>
+                    
+                    <label for="cust-address">Еконт адрес:</label>
+                    <textarea id="cust-address" required></textarea>
+
+                    <div class="payment-selection">
+                        <label>Начин на плащане:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment-method" value="cod" checked onclick="toggleCardFields('cod')"> Наложен платеж
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment-method" value="card" onclick="toggleCardFields('card')"> Плащане с карта
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="card-details-container" class="hidden-fields">
+                        <label>Данни за картата</label>
+                        <input type="text" id="card-num" placeholder="0000 0000 0000 0000">
+                        <div class="card-row">
+                            <input type="text" id="card-exp" placeholder="ММ/ГГ">
+                            <input type="password" id="card-cvc" placeholder="CVC">
+                        </div>
+                    </div>
+
+                    <input type="submit" value="ПОТВЪРДИ ПОРЪЧКАТА" class="btn-buy">
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Бързи Връзки</h4>
+                    <a href="index.html">Начало</a>
+                    <a href="products.html">Каталог</a>
+                    <a href="contacts.html">Контакти</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Свържете се с нас</h4>
+                    <p>Телефон: 087 502 9039</p>
+                    <p>Email: info@trendify.bg</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Последвайте ни</h4>
+                    <a href="https://www.facebook.com/">Facebook</a>
+                    <a href="https://www.instagram.com/">Instagram</a>
+                </div>
+            </div>
+            <p class="copyright">© 2025 TRENDIFY. | Дизайн и разработка: Даниел Геговски</p>
+        </footer>
+    </div>
+
+    <script src="session.js"></script>
+    <script src="order.js"></script>
+    <script src="validation.js"></script>
+</body>
+</html>
